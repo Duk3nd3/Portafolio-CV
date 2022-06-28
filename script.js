@@ -1,3 +1,9 @@
+/*
+
+CONTINUA https://youtu.be/ErtR07GLq54?t=9042
+
+*/
+
 /***************** Menu *****************/
 ((d) => {
 	const $btnMenu = d.querySelector('.menu-btn'),
