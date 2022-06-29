@@ -186,6 +186,44 @@ p {
 	}
 }
 
+/***************** Modal *****************/
+.modal {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--black-alpha-color);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 1s;
+}
+
+.modal-content {
+	position: relative;
+}
+
+.modal-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.modal-close svg {
+	width: 3rem;
+	height: 3rem;
+	fill: var(--first-color);
+}
+
+.modal[id|='trabajo']:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
 /***************** Progress Bar *****************/
 progress {
 	width: 100%;
@@ -380,6 +418,15 @@ progress::-moz-progress-bar {
 }
 
 @media screen and (min-width: 768px) {
+	.portfolio > .container {
+		display: grid;
+		grid-template-columns: repeat(2, 50%);
+	}
+
+	.portfolio .section-title {
+		grid-column: span 2;
+	}
+
 	.services > .container {
 		display: grid;
 		grid-template-columns: repeat(2, 45%);
@@ -406,12 +453,20 @@ progress::-moz-progress-bar {
 		padding: 0.5rem;
 		height: calc(var(--header-height) - 0.5rem);
 	}
-}
 
-.services > .container {
-	grid-template-columns: repeat(3, 30%);
-}
+	.portfolio > .container {
+		grid-template-columns: repeat(3, 1fr);
+	}
 
-.services .section-title {
-	grid-column: span 3;
+	.portfolio .section-title {
+		grid-column: span 3;
+	}
+
+	.services > .container {
+		grid-template-columns: repeat(3, 30%);
+	}
+
+	.services .section-title {
+		grid-column: span 3;
+	}
 }
