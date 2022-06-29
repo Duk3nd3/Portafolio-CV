@@ -91,6 +91,56 @@ p {
 
 /***************** Components *****************/
 
+/***************** Carousel *****************/
+.carousel {
+	margin: 2rem auto;
+	padding: 2rem 0;
+	max-width: 800px;
+	text-align: center;
+	overflow-x: hidden;
+	background-color: var(--carousel-bg-color);
+}
+
+.carousel .slides {
+	padding-left: 0;
+	/*Sumar a width 100% por cada slide*/
+	width: 400%;
+	display: flex;
+	list-style: none;
+	transition: transform 0.5s ease-in-out;
+}
+
+.carousel input {
+	display: none;
+}
+
+.carousel label {
+	border: medium solid var(--gray-dark-color);
+	border-radius: 50%;
+	margin: 0 0.25rem;
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.75rem;
+	cursor: pointer;
+}
+
+/*Por cada slide agregada dividir entre 100%*/
+#slide-1:checked ~ .slides {
+	transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+	transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides {
+	transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides {
+	transform: translateX(-75%);
+}
+
 /***************** Hero Image *****************/
 
 .hero-image {
@@ -255,6 +305,12 @@ progress::-moz-progress-bar {
 }
 
 /***************** Utilities *****************/
+.avatar {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+}
+
 .bg-gray-light {
 	background-color: var(--gray-light-color);
 }
@@ -301,6 +357,10 @@ progress::-moz-progress-bar {
 	width: 250px;
 	text-align: center;
 	color: var(--title-color);
+}
+
+.text-first-color {
+	color: var(--first-color);
 }
 
 .text-center {
