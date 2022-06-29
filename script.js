@@ -1,6 +1,6 @@
 /*
 
-CONTINUA https://youtu.be/ErtR07GLq54?t=9042
+CONTINUA https://youtu.be/ErtR07GLq54?t=16563
 
 */
 
