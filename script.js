@@ -1,6 +1,6 @@
 /*
 
-CONTINUA https://youtu.be/ErtR07GLq54?t=19655
+CONTINUA 
 
 */
 
@@ -21,5 +21,40 @@ CONTINUA https://youtu.be/ErtR07GLq54?t=19655
 		$btnMenu.firstElementChild.classList.remove('none');
 		$btnMenu.lastElementChild.classList.add('none');
 		$menu.classList.remove('is-active');
+	});
+})(document);
+
+/***************** Contact Form *****************/
+((d) => {
+	const $form = d.querySelector('.contact-form'),
+		$loader = d.querySelector('.contact-form-loader'),
+		$response = d.querySelector('.contact-form-response');
+
+	$form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		$loader.classList.remove('none');
+		fetch('https://formsubmit.co/ajax/a052261292e478af42ad98327e73d645', {
+			method: 'POST',
+			body: new FormData(e.target),
+		})
+			.then((res) => (res.ok ? res.json() : Promise.reject(res)))
+			.then((json) => {
+				console.log(json);
+				location.hash = '#gracias';
+				$form.reset();
+			})
+			.catch((err) => {
+				let message =
+					err.statusText || 'Ocurrio un error al enviar, intenta nuevamente';
+				$response.querySelector(
+					'h3'
+				).innerHTML = `Error ${err.status}: ${message}`;
+			})
+			.finally(() => {
+				$loader.classList.add('none');
+				setTimeout(() => {
+					location.hash = '#close';
+				}, 3000);
+			});
 	});
 })(document);
