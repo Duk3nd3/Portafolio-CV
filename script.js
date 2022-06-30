@@ -1,9 +1,3 @@
-/*
-
-CONTINUA 
-
-*/
-
 /***************** Menu *****************/
 ((d) => {
 	const $btnMenu = d.querySelector('.menu-btn'),
