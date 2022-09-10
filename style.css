@@ -449,7 +449,8 @@ progress::-moz-progress-bar {
 }
 
 .gray-scale {
-	filter: grayscale(1);
+	filter: grayscale(0);
+	border-radius: 50%;
 }
 
 .none {
